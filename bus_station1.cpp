@@ -66,12 +66,11 @@ void stops_for_bus(map<string, vector<string>>& buses_stops)
 		return;
 	}
 
-	for(auto& buses : buses_stops)
+	for(auto& act_stop : buses_stops[bus])
 	{
 		count = 0;
-		for(auto& act_stop : buses_stops[bus])
+		for(auto& buses : buses_stops)
 		{
-
 			flag = stops_for_this_bus(buses.second, act_stop);
 			if(flag && bus != buses.first)
 			{
@@ -79,12 +78,13 @@ void stops_for_bus(map<string, vector<string>>& buses_stops)
 					cout << "Stop " << act_stop << ": ";
 				cout << buses.first << " ";
 				count++;
-				cout << endl;
 			}
+			cout << endl;
 		}
 		if (count == 0)
-				cout << "no interchange" << endl;
+			cout << "no interchange" << endl;
 	}
+
 }
 
 void all_buses(const map<string, vector<string>>& buses_stops)
