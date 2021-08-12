@@ -36,7 +36,7 @@ void new_roadmap(map<int, vector<string>>& roadmap)
 		i++;
 	}
 	roadmap[i] = stations;
-	cout << "New bus " << i << endl;
+	cout << "New buss " << i << endl;
 }
 
 int main() {
